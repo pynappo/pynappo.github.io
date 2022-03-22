@@ -1,2 +1,2 @@
 # pynappo.github.io
-A page for stuff.
+Probably going to be a blog or personal portfolio made in jekyll idk what's gonna go here
