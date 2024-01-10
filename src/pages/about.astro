@@ -1,18 +1,36 @@
 ---
+import Base from "../layouts/Base.astro";
 const title = "About me";
+const identity = {
+  name: "pynappo",
+  country: "United States",
+  occupation: "Student at SJSU",
+  major: "BSCS",
+  hobbies: ["coding", "video games"],
+};
+const skills = ["lua", "neovim", "javascript", "c#"];
+const skillColor = "green";
 ---
 
-<html lang="en">
+<Base>
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <style define:vars={{ skillColor }}>
+      h1 {
+        color: purple;
+        font-size: 4rem;
+      }
+      .skill {
+        color: var(--skillColor);
+        font-weight: bold;
+      }
+    </style>
   </head>
   <body>
     <h1>About me</h1>
     <h2>(pynappo)</h2>
-    <p>This is my first attempt at a blog</p>
+    <p>Skills:</p>
+    <ul>
+      {skills.map((skill) => <li class="skill">{skill}</li>)}
+    </ul>
   </body>
-</html>
+</Base>
