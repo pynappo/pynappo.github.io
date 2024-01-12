@@ -1,7 +1,8 @@
 ---
-import Base from "../../layouts/Base.astro";
 import BlogPost from "../../components/BlogPost.astro";
 import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { Debug } from "astro:components";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
@@ -19,7 +20,7 @@ const { tag } = Astro.params;
 const { posts } = Astro.props;
 ---
 
-<Base title={tag}>
+<BaseLayout title={tag}>
   <p>Posts tagged with {tag}:</p>
   <ul>
     {
@@ -28,4 +29,4 @@ const { posts } = Astro.props;
       ))
     }
   </ul>
-</Base>
+</BaseLayout>

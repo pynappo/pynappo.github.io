@@ -15,7 +15,7 @@ html.dark {
 body {
   margin: 0 auto;
   width: 100%;
-  max-width: 80ch;
+  max-width: 120ch;
   padding: 1rem;
   line-height: 1.5;
 }
@@ -30,6 +30,10 @@ h1 {
 }
 
 /* nav styles */
+
+nav {
+  display: flex;
+}
 
 .hamburger {
   padding-right: 20px;
@@ -70,6 +74,10 @@ h1 {
 
 .expanded {
   display: unset;
+}
+
+footer {
+  border-top: 5px solid gray;
 }
 
 @media screen and (min-width: 636px) {

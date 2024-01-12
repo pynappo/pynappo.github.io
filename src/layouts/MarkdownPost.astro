@@ -1,10 +1,10 @@
 ---
-import Base from "./Base.astro";
+import BaseLayout from "./BaseLayout.astro";
 import { fade } from "astro:transitions";
 const { frontmatter } = Astro.props;
 ---
 
-<Base title={frontmatter.title}>
+<BaseLayout title={frontmatter.title}>
   <p>
     <p transition:animate={fade({ duration: "2s" })}>
       <em>{frontmatter.description}</em>
@@ -26,7 +26,7 @@ const { frontmatter } = Astro.props;
     </div>
     <slot />
   </p>
-</Base>
+</BaseLayout>
 <style>
   a {
     color: #00539f;

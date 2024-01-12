@@ -1,5 +1,5 @@
 ---
-import Base from "../layouts/Base.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 const title = "About me";
 const identity = {
   name: "pynappo",
@@ -12,19 +12,7 @@ const skills = ["lua", "neovim", "javascript", "c#"];
 const skillColor = "green";
 ---
 
-<Base>
-  <head>
-    <style define:vars={{ skillColor }}>
-      h1 {
-        color: purple;
-        font-size: 4rem;
-      }
-      .skill {
-        color: var(--skillColor);
-        font-weight: bold;
-      }
-    </style>
-  </head>
+<BaseLayout>
   <body>
     <h1>About me</h1>
     <h2>(pynappo)</h2>
@@ -33,4 +21,14 @@ const skillColor = "green";
       {skills.map((skill) => <li class="skill">{skill}</li>)}
     </ul>
   </body>
-</Base>
+</BaseLayout>
+<style define:vars={{ skillColor }}>
+  h1 {
+    color: purple;
+    font-size: 4rem;
+  }
+  .skill {
+    color: var(--skillColor);
+    font-weight: bold;
+  }
+</style>

@@ -1,13 +1,13 @@
 ---
 import { getCollection } from "astro:content";
-import Base from "../../layouts/Base.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 const posts = await getCollection("posts");
 const tags = [...new Set(posts.map((post) => post.data.tags))].flat();
 
 const title = "Browse posts by tag";
 ---
 
-<Base title={title}>
+<BaseLayout title={title}>
   <div class="tags">
     {
       tags.map((tag) => (
@@ -17,7 +17,7 @@ const title = "Browse posts by tag";
       ))
     }
   </div>
-</Base>
+</BaseLayout>
 <style>
   a {
     color: #00539f;

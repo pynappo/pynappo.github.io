@@ -1,9 +1,22 @@
 import { defineConfig } from "astro/config";
-
 import preact from "@astrojs/preact";
+import svelte from "@astrojs/svelte";
+import react from "@astrojs/react";
 
-// https://astro.build/config
 export default defineConfig({
+  // Enable many frameworks to support all different kinds of components.
+  // No `include` is needed if you are only using a single JSX framework!
   site: "https://pynappo.github.io",
-  integrations: [preact()]
+  integrations: [
+    preact({
+      include: ["**/preact/*"],
+    }),
+    react({
+      include: ["**/react/*"],
+    }),
+    svelte({
+      include: ["**/solid/*"],
+    }),
+  ],
 });
+import preact from "@astrojs/preact";
