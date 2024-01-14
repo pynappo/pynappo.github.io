@@ -1,10 +1,20 @@
 ---
-
+const links = [
+  ["/", "Home"],
+  ["/about", "About"],
+  ["/blog/", "Blog"],
+  ["/tags/", "Tags"],
+];
 ---
 
-<div class="nav-links" transition:animate="none">
-  <a href="/">Home</a>
-  <a href="/about/">About</a>
-  <a href="/blog/">Blog</a>
-  <a href="/tags/">Tags</a>
+<div
+  class="nav-links flex flex-row flex-nowrap space-x-2 content-center items-center"
+>
+  {
+    links.map(([link, label]) => (
+      <a href={link} class="align-middle hover:underline flex">
+        {label}
+      </a>
+    ))
+  }
 </div>
