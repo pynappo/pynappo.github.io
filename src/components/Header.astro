@@ -6,8 +6,14 @@ import ThemeButton from "./ThemeButton.astro";
 
 <header class="header">
   <nav class="flex flex-row flex-nowrap overflow-hidden">
-    <ThemeButton />
-    <Hamburger />
-    <Navigation />
+    <span class="inline sm:inline md:hidden">
+      <Hamburger />
+    </span>
+    <span class="hidden sm:hidden md:inline">
+      <Navigation />
+    </span>
+    <span class="ml-auto">
+      <ThemeButton />
+    </span>
   </nav>
 </header>

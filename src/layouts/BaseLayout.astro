@@ -15,7 +15,7 @@ const { title } = Astro.props;
     <ViewTransitions />
   </head>
   <body
-    class="mx-16 my-8 text-black bg-orange-100 dark:text-white dark:bg-cyan-900 transition-colors duration-500"
+    class="mx-16 my-8 text-black bg-gradient-to-tr from-blue-200 from-10% via-white via-50% to-orange-200 to-90% dark:text-white min-h-screen dark:bg-cyan-900 transition-colors duration-500"
   >
     <Header />
     <h1 transition:animate="slide">{title}</h1>
