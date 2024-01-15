@@ -19,6 +19,7 @@ concurrency:
 
 env:
   BUILD_PATH: "." # default value when not using subfolders
+  VERSION: "8.14.1"
   # BUILD_PATH: subfolder
 
 jobs:
