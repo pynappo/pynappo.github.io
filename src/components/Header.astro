@@ -4,15 +4,17 @@ import Hamburger from "./Hamburger.astro";
 import ThemeButton from "./ThemeButton.astro";
 ---
 
-<header class="header">
-  <nav class="flex flex-row flex-nowrap overflow-hidden">
+<header
+  class="sticky top-0 bg-zinc-300 h-10 bg-opacity-50 border-gray-400 border-b-2"
+>
+  <nav class="h-full flex flex-row flex-nowrap overflow-hidden items-center">
     <span class="inline sm:inline md:hidden">
       <Hamburger />
     </span>
-    <span class="hidden sm:hidden md:inline">
+    <span class="hidden sm:hidden md:inline h-full">
       <Navigation />
     </span>
-    <span class="ml-auto">
+    <span class="ml-auto mr-2">
       <ThemeButton />
     </span>
   </nav>

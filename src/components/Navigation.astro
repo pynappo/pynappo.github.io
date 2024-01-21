@@ -5,14 +5,28 @@ const links = [
   ["/blog/", "Blog"],
   ["/tags/", "Tags"],
 ];
+const { current_page } = Astro.props;
 ---
 
 <div
-  class="nav-links flex flex-row flex-nowrap space-x-2 content-center items-center"
+  class:list={[
+    "h-full",
+    "nav-links",
+    "flex-row flex-nowrap inline-flex align-middle justify-center",
+    "space-x-1 first:ml-2",
+  ]}
 >
   {
     links.map(([link, label]) => (
-      <a href={link} class="hover:underline border-gray-500">
+      <a
+        href={link}
+        class:list={[
+          "font-bold text-lg dark:text-white",
+          "border-transparent border-x-2 px-1",
+          "hover:underline hover:text-blue-500 hover:border-gray-400",
+          "flex align-middle items-center",
+        ]}
+      >
         {label}
       </a>
     ))

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Chip from "../components/Chip.astro";
 const title = "About me";
 const identity = {
   name: "pynappo",
@@ -9,26 +10,14 @@ const identity = {
   hobbies: ["coding", "video games"],
 };
 const skills = ["lua", "neovim", "javascript", "c#"];
-const skillColor = "green";
 ---
 
 <BaseLayout>
   <body>
-    <h1 class="text-purple-50">About me</h1>
-    <h2>(pynappo)</h2>
-    <p>Skills:</p>
-    <ul>
-      {skills.map((skill) => <li class="skill">{skill}</li>)}
-    </ul>
+    <h1 class="text-purple-500 text-center t-2">About me</h1>
+    <h2></h2>
+    <img src="/public/profile_pic.webp" />
+    <Chip href="https://github.com/pynappo">This is a test</Chip>
+    <Chip href="mailto:pynappo@proton.me">pynappo@proton.me</Chip>
   </body>
 </BaseLayout>
-<style define:vars={{ skillColor }}>
-  h1 {
-    color: purple;
-    font-size: 4rem;
-  }
-  .skill {
-    color: var(--skillColor);
-    font-weight: bold;
-  }
-</style>
