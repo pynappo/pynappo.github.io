@@ -5,15 +5,19 @@ const isAbsoluteUrl = (href: string): boolean =>
 var google_favicon = "";
 console.log(isAbsoluteUrl(href));
 if (isAbsoluteUrl(href)) {
-  google_favicon += "https://www.google.com/s2/favicons?domain=" + href;
+  google_favicon +=
+    "https://www.google.com/s2/favicons?domain=" + href + "sz=32";
 }
 ---
 
 <span
-  class="inline-flex pr-1 py-0 h-6 text-blue-400 bg-purple-900 bg-opacity-50 rounded-full hover:underline align-top"
+  class:list={[
+    "inline-flex px-1 py-0 h-6",
+    "text-blue-400 bg-purple-900 bg-opacity-50 rounded-full hover:underline align-top",
+  ]}
 >
   <img
-    class="h-[90%] w-auto ml-0 mr-1 my-auto object-cover rounded-full"
+    class="h-[90%] overflow-hidden ml-0 mr-1 my-auto object-cover rounded-full"
     src={isAbsoluteUrl(href) ? google_favicon : "/favicon.svg"}
   />
   <a href={href}>
