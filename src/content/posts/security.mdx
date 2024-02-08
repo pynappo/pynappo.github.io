@@ -1,14 +1,39 @@
 ---
-title: 'Hello world!'
+title: 'A decent setup for secure authentication'
 pubDate: 2023-01-05
-description: 'This is the first post of my Astro blog.'
+description: "After some basic research, I've settled on a decent password manager setup that doesn't cause much mental overhead."
 author: 'bappled'
 image:
     url: 'https://docs.astro.build/assets/full-logo-light.png'
     alt: 'The full Astro logo.'
-tags: ["lua", "dx"]
+tags: ["personal", "authentication"]
 ---
 
-- Password manager + KeePassXC synced via Syncthing.
-- YubiKey, KeePassXC, and/or Phone used as passkeys.
+# KeePass is great!
+
+Currently, I use a KeePass database synced across all my devices using Syncthing. For clients, I use KeePassXC and
+KeePassDX on their respective platforms. The database is detected by one very long password. For me this accomplishes a
+few things:
+
+- Full control of database and how/where it's backed up
+- Cross platform support
+- Full access offline
+- Using more FOSS software (although not a big deal to me)
+- Secret service support through KeePassXC (convenient so I don't have to install a seperate program for Linux)
+
+Overall besides how their browser extension isn't very good, this is a pretty satisfying setup for me.
+
+# Passwords
+
+Generally speaking, for accounds that have important data I always generate a random secure password through KeePass.
+If it's not that important, I honestly just use the same few kinds of passwords everywhere so I don't have to back it up
+into KeePass immediately or pull up KeePass.
+
+# 2FA and Passkeys
+
+Whereever possible, I use YubiKey, KeePassXC, and/or my phone as either passkeys or 2FA. Using these mostly physical
+passkeys should prevent my accounts from being logged into from other parts of the world.
+
+I also use Aegis to store TOTP on my phone. I prefer to keep the TOTP secrets in Aegis instead of KeePass because I like
+the UX of Aegis more (easier to copy, easy to open through the quick settings button, etc.).
 
