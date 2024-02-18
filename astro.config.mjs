@@ -23,5 +23,14 @@ export default defineConfig({
     }),
     mdx(),
   ],
+  markdown: {
+    shikiConfig: {
+      experimentalThemes: {
+        light: "github-dark",
+        dark: "github-dark",
+      },
+      wrap: true,
+    },
+  },
 });
 import preact from "@astrojs/preact";

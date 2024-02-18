@@ -40,8 +40,6 @@ for (const [key, value] of Object.entries({
   );
   ayu_copy[key] = a;
 }
-console.log(ayu_copy);
-console.log(ayu_copy.mirage.editor.fg);
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -80,5 +78,5 @@ module.exports = {
     }),
     extend: {},
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };
