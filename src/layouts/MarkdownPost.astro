@@ -10,9 +10,9 @@ const { frontmatter } = Astro.props;
       <em>{frontmatter.description}</em>
     </p>
     <p>
-      Written by: <a class="text-ayu-dark-syntax-entity" href="/about/"
+      Written by: <a class="text-ayu-dark-syntax-entity hover:underline" href="/about/"
         >{frontmatter.author}</a
-      > on {frontmatter.pubDate.toString().slice(0, 10)}
+      > on {frontmatter.publicationDate.toString().slice(0, 10)}
     </p>
     <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
     <div class="tags flex flex-wrap">
