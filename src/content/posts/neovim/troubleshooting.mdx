@@ -1,0 +1,58 @@
+---
+title: 'Troubleshooting Neovim - printing, inspecting state, useful tips'
+publicationDate: 2024-02-12
+updateDate: 2024-02-12
+description: "Printing, inspecting state, useful tips"
+author: 'bappled'
+image:
+  url: 'https://docs.astro.build/assets/full-logo-light.png'
+  alt: 'The full Astro logo.'
+tags: ["personal", "authentication"]
+---
+
+## Use :Inspect for checking highlights
+
+`:Inspect` will check highlights at the cursor postion. This can help you figure out what text is affected by.
+
+## Inspecting lua state
+
+You can run lua from the command line:
+
+```
+:lua vim.notify('hi!')
+```
+
+You can inspect any global/`require`able variables from the command line
+
+```
+:=require('lazy')
+```
+
+This is shorthand for:
+
+```
+:lua vim.print(require('lazy'))
+```
+
+`vim.print(...)` is a wrapper around `print(vim.inspect(...))` which also returns the arguments that are
+passed in. If you get an error and properly follow the stacktrace, you can wrap anything you want to inspect with it:
+
+```lua
+local foo = bar:gsub("asdf", "hjkl")
+--          ^^^^^^^^ let's say you get an error here:
+-- foo is unaffected no matter what you wrap with vim.print:
+local foo = vim.print(bar):gsub("asdf", "hjkl")
+-- 
+```
+
+
+## Get familiar with stdpath()s
+
+Neovim has documented "standard paths" that are used by Neovim and plugins to store things in consistent locations,
+defaulting to sensible locations on Unix/Windows. Largely speaking, lazy.nvim installs plugins
+under the data directory, so for lazy.nvim users, if you get a stacktrace where you see an error for a plugin, but can't see the full
+directory name, you likely want to start under the result of:
+
+```
+:echo stdpath('data')
+```
